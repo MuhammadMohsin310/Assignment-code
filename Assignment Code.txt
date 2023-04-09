@@ -1,0 +1,32 @@
+void main(){
+
+  Person person1 = Person('John Smith' , 25 , "male");
+  Student student1 = Student('Jane Doe' , 18 , "female" , "grade 12");
+  
+  person1.printAll();
+  student1.printAll();
+
+}
+class Person {
+
+  String name;
+  int age;
+  String gender;
+
+  Person(this.name, this.age, this.gender);
+
+  printAll(){
+  print("person: ${name}, ${age}, ${gender}");
+  }
+
+}
+class Student extends Person{
+
+  String gradeLevel;
+
+  Student(String name, int age, String gender, this.gradeLevel) : super(name, age, gender);
+
+  printAll(){
+     print("Student: ${name}, ${age}, ${gender}, ${gradeLevel}"); 
+  }
+}
